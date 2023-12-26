@@ -12,8 +12,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 public class Record {
 
-    private Long id;
-    private LocalDate entryDate;
+    private String entryDate;
     private String itemCode; //this field could be very long and I don`t see the functionality to make math action with this in future
     private String itemName;
     private String itemQuantity; //I don`t see the functionality to make math action with this

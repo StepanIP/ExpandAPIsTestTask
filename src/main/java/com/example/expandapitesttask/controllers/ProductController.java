@@ -1,7 +1,7 @@
 package com.example.expandapitesttask.controllers;
 
 import com.example.expandapitesttask.dto.Record;
-import com.example.expandapitesttask.dto.Request;
+import com.example.expandapitesttask.dto.request.DataRequest;
 import com.example.expandapitesttask.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +23,8 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addProducts(@RequestBody Request request) {
-        productService.saveRecords(request);
+    public ResponseEntity<String> addProducts(@RequestBody DataRequest dataRequest) {
+        productService.saveRecords(dataRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
