@@ -30,11 +30,12 @@ dependencies {
     testImplementation 'org.postgresql:postgresql:42.3.8'
 
     //but i also added mysql
-    implementation 'mysql:mysql-connector-java:8.0.23'
-    testImplementation 'mysql:mysql-connector-java:8.0.23'
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    testImplementation 'mysql:mysql-connector-java:8.0.28'
 
     implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-web'
