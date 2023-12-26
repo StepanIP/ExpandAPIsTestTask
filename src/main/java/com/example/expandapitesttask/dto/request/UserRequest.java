@@ -1,4 +1,4 @@
-package com.example.expandapitesttask.dto;
+package com.example.expandapitesttask.dto.request;
 
 import lombok.*;
 
