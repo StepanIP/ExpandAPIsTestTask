@@ -3,6 +3,7 @@ package com.example.expandapitesttask.controllers;
 import com.example.expandapitesttask.dto.request.UserRequest;
 import com.example.expandapitesttask.dto.response.JwtAuthenticationResponse;
 import com.example.expandapitesttask.service.security.AuthenticationService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,9 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<JwtAuthenticationResponse> createUser(@RequestBody UserRequest request) {
-        return ResponseEntity.ok(authenticationService.signup(request));
+    public ResponseEntity<String> createUser(@RequestBody UserRequest request) {
+        authenticationService.signup(request);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("/authenticate")

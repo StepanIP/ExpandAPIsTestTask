@@ -21,7 +21,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     @Override
-    public JwtAuthenticationResponse signup(UserRequest request) {
+    public void signup(UserRequest request) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(request.getPassword());
 
@@ -30,8 +30,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .password(encodedPassword)
                 .build();
         userRepository.save(account);
-        var jwt = jwtService.generateToken(account);
-        return JwtAuthenticationResponse.builder().token(jwt).build();
     }
 
     @Override
